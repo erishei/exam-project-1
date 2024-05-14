@@ -44,7 +44,7 @@ document.getElementById("login-form").addEventListener("submit", async function(
 
         // Redirect to another page or perform other actions
         alert("Login successful!");
-        window.location.href = "admin/post/edit.html"; // Replace "dashboard.html" with the URL of your desired page
+        location.href = "/admin/post/index.html";
     } catch (error) {
         console.error("Error:", error);
         alert("Login failed. Please check your credentials and try again.");

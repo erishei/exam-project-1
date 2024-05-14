@@ -29,14 +29,14 @@ async function fetchPosts() {
 function displayPosts(posts) {
     const postsContainer = document.getElementById('posts');
     postsContainer.innerHTML = '';
-    console.log(posts);
+console.log(posts);
     posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.innerHTML = `
             <h2 class="post-title">${post.title}</h2>
-            <img src="${post.media}">
             <p class="post-p">${post.body}</p>
-            <button class="read-more-btn">Read More</button>
+            <button type="button">Edit</button>
+            <button type="button">Delete</button>
         `;
         postsContainer.appendChild(postElement);
     });
