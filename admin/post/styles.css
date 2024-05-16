@@ -51,3 +51,8 @@ nav a {
     font-family: "Playfair Display", serif;
     font-size: 1rem;
 }
+
+.post-img {
+    height: 328px;
+    width: inherit;
+}
