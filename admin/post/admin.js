@@ -1,51 +1,8 @@
-// const apiUrl = "https://v2.api.noroff.dev";
-//
-// fetchPosts();
-//
-// async function fetchPosts() {
-//     const token = localStorage.getItem('accessToken');
-//
-//     if (!token) {
-//         console.error('No token found in localStorage.');
-//         return;
-//     }
-//
-//     try {
-//         const response = await fetch(apiUrl + "/blog/posts/ericasheidai", {
-//             headers: {
-//                 'Authorization': `Bearer ${token}`
-//             }
-//         });
-//
-//         if (!response.ok) {
-//             throw new Error('Network response was not ok.');
-//         }
-//
-//         const posts = await response.json();
-//
-//         displayPosts(posts.data);
-//     } catch (error) {
-//         console.error('Error fetching posts:', error.message);
-//     }
-// }
-//
-// function displayPosts(posts) {
-//     const postsContainer = document.getElementById('posts');
-//     postsContainer.innerHTML = '';
-//     console.log(posts);
-//     posts.forEach(post => {
-//         const postElement = document.createElement('div');
-//         postElement.innerHTML = `
-//             <h2 class="post-title">${post.title}</h2>
-//             <img class="post-img" src="${post.media.url}">
-//             <p class="post-p">${post.body}</p>
-//         `;
-//         postsContainer.appendChild(postElement);
-//     });
-// }
-const apiUrl = "https://v2.api.noroff.dev";
+export const apiUrl = "https://v2.api.noroff.dev";
 
-fetchPosts();
+document.addEventListener('DOMContentLoaded', () => {
+    fetchPosts();
+});
 async function fetchPosts() {
     const token = localStorage.getItem('accessToken');
 
@@ -75,6 +32,10 @@ async function fetchPosts() {
 
 function displayPosts(posts) {
     const postsContainer = document.getElementById('posts');
+    if (!postsContainer) {
+        console.error('Posts container not found.');
+        return;
+    }
     postsContainer.innerHTML = '';
 
     posts.forEach(post => {
@@ -110,7 +71,14 @@ function displayPosts(posts) {
 async function deletePost(postId) {
     try {
         const token = localStorage.getItem('accessToken');
-        const response = await fetch(apiUrl + `/blog/posts/ericasheidai/${postId}`, {
+
+        if (!token) {
+            console.error('No token found in localStorage.');
+            return;
+        }
+
+        console.log(`Attempting to delete post with ID: ${postId}`);
+        const response = await fetch(`${apiUrl}/blog/posts/ericasheidai/${postId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -118,10 +86,11 @@ async function deletePost(postId) {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok.');
+            console.error('Network response was not ok.');
+            return;
         }
 
-        // Reload posts after successful deletion
+        console.log('Post deleted successfully, refreshing posts...');
         fetchPosts();
     } catch (error) {
         console.error('Error deleting post:', error.message);

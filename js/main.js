@@ -29,25 +29,21 @@ function displayPosts(posts) {
         postsContainer.appendChild(postElement);
     });
 
-    // Attach event listener to all "read more" buttons
     const readMoreButtons = document.querySelectorAll(".read-more-btn");
     readMoreButtons.forEach(button => {
         button.addEventListener("click", function() {
             const postId = button.dataset.postId;
 
-            // Add a class to trigger the underline effect
             button.classList.add("clicked");
 
-            // Delay the navigation after 1 second
             setTimeout(function() {
                 window.location.href = `post.html?id=${postId}`;
             }, 1000);
         });
     });
 
-    // Listen for popstate event (navigating back)
+
     window.addEventListener("popstate", function() {
-        // Remove the "clicked" class from all buttons
         readMoreButtons.forEach(button => {
             button.classList.remove("clicked");
         });

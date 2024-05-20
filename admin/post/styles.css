@@ -1,9 +1,6 @@
-:root {
-
-}
-
 * {
     font-family: "Roboto Light", sans-serif;
+    box-sizing: border-box;
 }
 
 .playfair-display-.serif-font {
@@ -47,6 +44,22 @@ nav a {
     background-color: hotpink;
 }
 
+#new-post-btn {
+    text-decoration: none;
+    color: #121212;
+    background-color: #FFFFFA;
+    font-family: "Playfair Display", serif;
+    padding: .5rem;
+    border: 1px solid #121212;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#new-post-btn:hover {
+    border: 1px solid #CCCCFF;
+    box-shadow: 0 4px 8px rgba(204, 204, 255, 1);
+}
+
 .post-title {
     font-family: "Playfair Display", serif;
     font-size: 1rem;
@@ -55,4 +68,14 @@ nav a {
 .post-img {
     height: 328px;
     width: inherit;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: solid 8px #F6F6F6;
+    padding: 1rem;
+    margin-top: 2rem;
+    gap: .5rem;
+    background-color: #FFFFFA;
 }

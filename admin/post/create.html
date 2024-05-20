@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="create-edit.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="create.js" type="module" defer></script>
+    <title>Create New Post</title>
+</head>
+
+<nav>
+    <a href="index.html">The Haute Spot</a>
+</nav>
+<body>
+    <form id="new-post-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="body">Body:</label>
+        <textarea id="body" name="body" rows="5" cols="50" placeholder="Enter blog text here..."></textarea>
+        <label for="tags">Tags:</label>
+        <input type="text" id="tags" name="tags">
+        <label for="media-url">Media URL:</label>
+        <input type="text" id="media-url" name="media-url">
+        <label for="media-alt">Media Alt Text:</label>
+        <input type="text" id="media-alt" name="media-alt">
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="preview-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close" id="close-preview">&times;</span>
+            <div id="preview-content"></div>
+            <button id="confirm-post">Confirm Post</button>
+        </div>
+    </div>
+</body>
+</html>
