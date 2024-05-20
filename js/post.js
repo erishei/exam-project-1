@@ -38,10 +38,10 @@ function displayPost(post) {
     const postContainer = document.getElementById('post-container');
     if (postData && postData.author && postData.author.name) {
         postContainer.innerHTML = `
-            <h2 class="post-title">${postData.title}</h2>
-            <p class="post-p">${postData.body}</p>
-            <img src="${postData.media.url}" alt="${postData.media.alt}" class="post-img"> 
-            <p class="post-author">Author: ${postData.author.name}</p>
+            <h2 class="single-post-title">${postData.title}</h2>
+            <img src="${postData.media.url}" alt="${postData.media.alt}" class="single-post-img"> 
+            <p class="single-post-author">Author: ${postData.author.name}</p>
+            <p class="single-post-p">${postData.body}</p>
         `;
     } else {
         postContainer.innerHTML = `

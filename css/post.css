@@ -1,0 +1,17 @@
+#post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.single-post-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+}
+
+.single-post-img {
+    max-width: 400px;
+    height: auto;
+}

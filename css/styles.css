@@ -41,13 +41,84 @@ nav a {
     cursor: pointer;
 }
 
-.hero-banner {
-    width: 80%;
-    height: 360px;
-    background-color: hotpink;
+/*.carousel-container {*/
+/*    display: flex;*/
+/*    !*justify-content: center; !* Center the carousel content horizontally *!*!*/
+/*    !*align-items: center; !* Center the carousel content vertically *!*!*/
+/*    margin-bottom: 20px; !* Add some bottom margin for spacing *!*/
+/*}*/
+
+.carousel {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
 }
 
+.carousel-navigation {
+    display: flex;
+    justify-content: center; /* Align buttons at the start and end */
+    align-items: center; /* Vertically center buttons */
+    margin-top: 10px;
+}
 
+.carousel-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #121212;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-family: "Playfair Display", serif;
+    background-color: #F6F6F6;
+    color: #121212;
+    height: inherit;
+    width: fit-content;
+    border-radius: 100%;
+}
+
+.carousel-btn:hover {
+    border: 1px solid #CCCCFF;
+    box-shadow: 0 2px 4px rgba(204, 204, 255, 0.5);
+}
+
+.carousel-btn:focus {
+    outline: none;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: none;
+}
+
+.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.active .post-img{
+    height: auto;
+    width: 328px;
+}
+
+#posts {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+#posts div {
+    background-color: #FFFFFA;
+    border: solid 8px #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
 
 .post-title {
     font-family: "Playfair Display", serif;
@@ -55,24 +126,21 @@ nav a {
 }
 
 .post-img {
-    height: 328px;
-    width: inherit;
+    width: 328px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
 }
 
-/*.read-more-btn {*/
-/*    padding: .8rem;*/
-/*    border: 1px solid #121212;*/
-/*    font-family: "Playfair Display", serif;*/
-/*    font-size: 1rem;*/
-/*    background-color: #F6F6F6;*/
-/*}*/
-
-/*.read-more-btn:hover {*/
-/*    background-color: #FFFFFA;*/
-/*    border: 1px solid #CCCCFF;*/
-/*}*/
+.post-p {
+    min-width: 328px;
+    max-width: 430px;
+    height: 64px;
+    overflow: hidden;
+}
 
 .read-more-btn {
+    max-width: fit-content;
     padding: .8rem;
     border: 1px solid #121212;
     font-family: "Playfair Display", serif;
