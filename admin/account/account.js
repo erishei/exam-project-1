@@ -37,7 +37,7 @@ document.getElementById("login-form").addEventListener("submit", async function(
         localStorage.setItem("accessToken", accessToken);
 
         alert("Login successful!");
-        window.location.href = "/post/index.html";
+        location.href = "exam-project-1/admin/post/index.html";
     } catch (error) {
         console.error("Error:", error);
         alert("Login failed. Please check your credentials and try again.");
