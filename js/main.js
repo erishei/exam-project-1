@@ -1,25 +1,14 @@
 const apiUrl = "https://v2.api.noroff.dev";
+
+fetchPosts();
+
 async function fetchPosts() {
-    const token = localStorage.getItem('accessToken');
-
-    if (!token) {
-        console.error('No token found in localStorage.');
-        return;
-    }
-
     try {
-        const response = await fetch(apiUrl + "/blog/posts/ericasheidai", {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-
+        const response = await fetch(`${apiUrl}/blog/posts/ericasheidai`);
         if (!response.ok) {
             throw new Error('Network response was not ok.');
         }
-
         const posts = await response.json();
-
         displayPosts(posts.data);
     } catch (error) {
         console.error('Error fetching posts:', error.message);
@@ -29,18 +18,34 @@ async function fetchPosts() {
 function displayPosts(posts) {
     const postsContainer = document.getElementById('posts');
     postsContainer.innerHTML = '';
-    console.log(posts);
+
     posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.innerHTML = `
             <h2 class="post-title">${post.title}</h2>
-            <img src="${post.media}">
             <p class="post-p">${post.body}</p>
-            <button class="read-more-btn">Read More</button>
+            <button type="button" class="read-more-btn" data-post-id="${post.id}">Read More</button>
         `;
         postsContainer.appendChild(postElement);
     });
-}
 
-fetchPosts();
-displayPosts();
+    const readMoreButtons = document.querySelectorAll(".read-more-btn");
+    readMoreButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const postId = button.dataset.postId;
+
+            button.classList.add("clicked");
+
+            setTimeout(function() {
+                window.location.href = `post.html?id=${postId}`;
+            }, 1000);
+        });
+    });
+
+
+    window.addEventListener("popstate", function() {
+        readMoreButtons.forEach(button => {
+            button.classList.remove("clicked");
+        });
+    });
+}

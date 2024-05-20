@@ -47,7 +47,56 @@ nav a {
     background-color: hotpink;
 }
 
+
+
 .post-title {
     font-family: "Playfair Display", serif;
     font-size: 1rem;
+}
+
+.post-img {
+    height: 328px;
+    width: inherit;
+}
+
+/*.read-more-btn {*/
+/*    padding: .8rem;*/
+/*    border: 1px solid #121212;*/
+/*    font-family: "Playfair Display", serif;*/
+/*    font-size: 1rem;*/
+/*    background-color: #F6F6F6;*/
+/*}*/
+
+/*.read-more-btn:hover {*/
+/*    background-color: #FFFFFA;*/
+/*    border: 1px solid #CCCCFF;*/
+/*}*/
+
+.read-more-btn {
+    padding: .8rem;
+    border: 1px solid #121212;
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    background-color: #F6F6F6;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    transition: box-shadow 0.1s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #FFFFFA;
+    border: 1px solid #CCCCFF;
+    box-shadow: none;
+}
+
+.read-more-btn:active {
+    background-color: #FFFFFA;
+    border: 1px solid #CCCCFF;
+    box-shadow: 0 2px 4px rgba(204, 204, 255, 0.5);
+}
+
+.read-more-btn.clicked {
+    text-decoration: underline;
+    box-shadow: 0 2px 4px rgba(204, 204, 255, 1);
 }
