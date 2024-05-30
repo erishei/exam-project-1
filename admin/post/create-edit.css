@@ -3,7 +3,7 @@
     margin-right: .5rem;
 }
 
-#edit-post-form button{
+#edit-post-form button {
     font-family: "Playfair Display", serif;
     font-size: 1rem;
     align-self: center;
@@ -57,7 +57,7 @@
 }
 
 .modal-button {
-    font-family: "Playfair Display",serif;
+    font-family: "Playfair Display", serif;
     font-size: 1rem;
     border: 1px solid #121212;
     color: #121212;
