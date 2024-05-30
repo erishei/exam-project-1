@@ -24,6 +24,18 @@ nav {
     font-family: "Playfair Display", serif;
 }
 
+#sign-up-link {
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #121212;
+    margin-top: 1rem;
+}
+
+#sign-up-link:hover {
+    text-decoration: underline;
+}
+
 main {
     height: 100%;
     display: flex;
