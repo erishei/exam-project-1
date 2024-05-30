@@ -16,7 +16,9 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 0;
+    padding: 0 35px;
+    height: 100%;
+    width: 100%;
 }
 
 nav {
@@ -26,9 +28,13 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-nav a {
+.center-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: "Playfair Display", serif;
     color: #FAFAFA;
     font-size: 1.5rem;
@@ -36,6 +42,32 @@ nav a {
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
+}
+
+#logout-btn {
+    position: absolute;
+    right: 1rem;
+    color: #FAFAFA;
+    background-color: transparent;
+    border: 1px solid #FFFFFA;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-family: "Playfair Display", serif;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, transform 0.1s ease;
+}
+
+#logout-btn:hover {
+    background-color: #FAFAFA;
+    color: #121212;
+}
+
+#logout-btn:active {
+    background-color: #FAFAFA;
+    color: #121212;
+    text-decoration: underline;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: translateY(1px);
 }
 
 .hero-banner {
@@ -60,14 +92,43 @@ nav a {
     box-shadow: 0 4px 8px rgba(204, 204, 255, 1);
 }
 
+#posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-post-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFA;
+    border: solid 8px #F6F6F6;
+    padding: 1rem;
+}
+
 .post-title {
     font-family: "Playfair Display", serif;
     font-size: 1rem;
 }
 
 .post-img {
-    height: 328px;
-    width: inherit;
+    width: 328px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.post-p {
+    width: 328px;
+    height: 64px;
+    overflow: scroll;
+    padding: .5rem;
 }
 
 form {
@@ -78,4 +139,30 @@ form {
     margin-top: 2rem;
     gap: .5rem;
     background-color: #FFFFFA;
+}
+
+form textarea {
+    max-width: 372px;
+    min-width: 312px;
+}
+
+.edit-delete-btn {
+    color: #121212;
+    background-color: #FFFFFA;
+    font-family: "Playfair Display", serif;
+    padding: .5rem;
+    border: 1px solid #121212;
+}
+
+.edit-delete-btn:hover {
+    cursor: pointer;
+    border: 1px solid #CCCCFF;
+    box-shadow: 0 4px 8px rgba(204, 204, 255, 1);
+}
+
+.button-container {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
 }
