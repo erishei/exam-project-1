@@ -6,33 +6,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
           rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rain jackets for adventurous individuals">
+    <meta name="description" content="Welcome to The Haute Spot, your destination for the latest fashion trends and inspiration. Explore our curated collection of stylish posts, featuring the hottest looks and must-have accessories. Join us and stay ahead of the fashion curve!">
     <meta charset="UTF-8">
+    <title>Blog Feed Page</title>
+    <!-- ARIA labels -->
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <script src="/js/main.js" type="module" defer></script>
-    <title>Blog Feed Page</title>
 </head>
 <body>
 
-<nav>
+<nav aria-label="Site Navigation">
     <a href="index.html">
         The Haute Spot
     </a>
 </nav>
 
 <header>
-    <section id="carousel-outer">
+    <section id="carousel-outer" aria-label="Featured Posts Carousel">
         <div class="carousel-navigation">
-            <button id="prev-btn" class="carousel-btn"><img src="assets/icons/venstre.svg" alt="back button">
+            <button id="prev-btn" class="carousel-btn" aria-label="Previous Slide"><img src="assets/icons/venstre.svg" alt="back button">
             </button>
             <div id="carousel-container" class="carousel"></div>
-            <button id="next-btn" class="carousel-btn"><img src="assets/icons/høyre.svg" alt="forward button">
+            <button id="next-btn" class="carousel-btn" aria-label="Next Slide"><img src="assets/icons/høyre.svg" alt="forward button">
             </button>
         </div>
     </section>
 </header>
 
-<div id="posts">
+<div id="posts" aria-label="Blog Post Grid">
 
 </div>
 

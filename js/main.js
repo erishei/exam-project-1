@@ -28,7 +28,7 @@ function displayPosts(posts) {
             <img class="post-img" src="${post.media.url}" alt="${post.media.alt}">
             <h2 class="post-title">${post.title}</h2>
             <p class="post-p">${post.body}</p>
-            <button type="button" class="read-more-btn" data-post-id="${post.id}">Read More</button>
+            <button type="button" class="read-more-btn" data-post-id="${post.id}" aria-label="button that takes you to specific posts page.">Read More</button>
         `;
         postsContainer.appendChild(postElement);
     });
@@ -129,7 +129,7 @@ function createPostHTML(post) {
             <h2 class="post-title">${post.title}</h2>
             <img class="carousel-img" src="${post.media.url}" alt="${post.media.alt}">
             <p class="post-p">${post.body}</p>
-            <button type="button" class="read-more-btn" data-post-id="${post.id}">Read More</button>
+            <button type="button" class="read-more-btn" data-post-id="${post.id}" aria-label="button that takes you to specific posts page.">Read More</button>
         </div>
     `;
 }

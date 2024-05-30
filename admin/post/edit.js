@@ -46,7 +46,7 @@ function populateEditForm(post) {
             <input type="text" id="media-url" name="media-url" value="${mediaUrl}">
             <label for="media-alt">Media Alt Text:</label>
             <input type="text" id="media-alt" name="media-alt" value="${mediaAlt}">
-            <button type="submit">Save Changes</button>
+            <button type="submit" aria-label="submit-button">Save Changes</button>
         </form>
     `;
 
