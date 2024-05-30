@@ -88,7 +88,6 @@ async function deletePost(postId) {
             return;
         }
 
-        console.log(`Attempting to delete post with ID: ${postId}`);
         const response = await fetch(`${apiUrl}/blog/posts/ericasheidai/${postId}`, {
             method: 'DELETE',
             headers: {
@@ -101,7 +100,6 @@ async function deletePost(postId) {
             return;
         }
 
-        console.log('Post deleted successfully, refreshing posts...');
         fetchPosts();
     } catch (error) {
         console.error('Error deleting post:', error.message);

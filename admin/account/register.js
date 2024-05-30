@@ -1,6 +1,6 @@
 const apiURL = "https://v2.api.noroff.dev";
 
-document.getElementById('register-form').addEventListener("submit", async function(event) {
+document.getElementById('register-form').addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const username = document.getElementById('username').value;

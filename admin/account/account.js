@@ -1,7 +1,7 @@
 const NOROFF_API_URL = "https://v2.api.noroff.dev";
 
 document.getElementById("login-form").addEventListener("submit", async function(event) {
-    event.preventDefault(); // prevent default form submission
+    event.preventDefault();
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     await fetchAndDisplayPosts();
     await renderCarousel();
 });
@@ -35,18 +35,18 @@ function displayPosts(posts) {
 
     const readMoreButtons = document.querySelectorAll(".read-more-btn");
     readMoreButtons.forEach(button => {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             const postId = button.dataset.postId;
 
             button.classList.add("clicked");
 
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = `post.html?id=${postId}`;
             }, 1000);
         });
     });
 
-    window.addEventListener("popstate", function() {
+    window.addEventListener("popstate", function () {
         readMoreButtons.forEach(button => {
             button.classList.remove("clicked");
         });
@@ -94,14 +94,15 @@ async function renderCarousel() {
             }
         });
     }
+
     const readMoreButtons = document.querySelectorAll(".read-more-btn");
     readMoreButtons.forEach(button => {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             const postId = button.dataset.postId;
 
             button.classList.add("clicked");
 
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = `post.html?id=${postId}`;
             }, 1000);
         });
