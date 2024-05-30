@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="create-edit.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="edit.js" defer></script>
     <title>Edit Post</title>
 </head>
+<nav>
+    <a href="index.html" class="center-link">The Haute Spot</a>
+</nav>
 <body>
+
 <div id="edit-container"></div>
-<script src="edit.js"></script>
+
+<div id="preview-overlay" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close" id="close-preview">&times;</span>
+        <div id="preview-content"></div>
+        <button id="confirm-post" class="modal-button">Confirm Changes</button>
+    </div>
+</div>
 </body>
 </html>

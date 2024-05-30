@@ -1,7 +1,3 @@
-:root {
-
-}
-
 * {
     font-family: "Roboto Light", sans-serif;
 }
@@ -19,7 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 0;
+    padding: 0 35px;
 }
 
 nav {
@@ -41,49 +37,62 @@ nav a {
     cursor: pointer;
 }
 
-/*.carousel-container {*/
-/*    display: flex;*/
-/*    !*justify-content: center; !* Center the carousel content horizontally *!*!*/
-/*    !*align-items: center; !* Center the carousel content vertically *!*!*/
-/*    margin-bottom: 20px; !* Add some bottom margin for spacing *!*/
-/*}*/
+header {
+    width: 100vw;
+    background-color: #F6F6F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+#carousel-outer {
+    width: fit-content;
+}
 
 .carousel {
     display: flex;
-    flex-wrap: nowrap; /* Prevent items from wrapping */
+    flex-wrap: nowrap;
     overflow: hidden;
     width: 100%;
     margin: auto;
 }
 
+.carousel img {
+    width: 328px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
 .carousel-navigation {
     display: flex;
-    justify-content: center; /* Align buttons at the start and end */
-    align-items: center; /* Vertically center buttons */
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
 }
 
 .carousel-btn {
-    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid #121212;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin: 0 5px;
-    font-family: "Playfair Display", serif;
-    background-color: #F6F6F6;
-    color: #121212;
-    height: inherit;
-    width: fit-content;
-    border-radius: 100%;
+    background-color: #FFFFFA;
+    height: fit-content;
+    width: inherit;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-btn:hover {
-    border: 1px solid #CCCCFF;
-    box-shadow: 0 2px 4px rgba(204, 204, 255, 0.5);
+    cursor: pointer;
+    background-color: #121212;
 }
 
-.carousel-btn:focus {
-    outline: none;
+.carousel-btn img {
+    height: 2rem;
+    width: inherit;
 }
 
 .carousel-item {
@@ -108,6 +117,10 @@ nav a {
     display: flex;
     flex-wrap: wrap;
     margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
 }
 
 #posts div {
@@ -133,15 +146,22 @@ nav a {
 }
 
 .post-p {
-    min-width: 328px;
-    max-width: 430px;
-    height: 64px;
+    width: 328px;
+    height: auto;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: pre-line;
+    text-overflow: ellipsis;
+    /*width: 328px;*/
+    /*height: 64px;*/
+    /*overflow: hidden;*/
 }
 
 .read-more-btn {
     max-width: fit-content;
-    padding: .8rem;
+    padding: .5rem;
     border: 1px solid #121212;
     font-family: "Playfair Display", serif;
     font-size: 1rem;
@@ -153,7 +173,8 @@ nav a {
 }
 
 .read-more-btn:hover {
-    background-color: #FFFFFA;
+    background-color: #121212;
+    color: #FFFFFA;
     border: 1px solid #CCCCFF;
     box-shadow: none;
 }
@@ -167,4 +188,16 @@ nav a {
 .read-more-btn.clicked {
     text-decoration: underline;
     box-shadow: 0 2px 4px rgba(204, 204, 255, 1);
+}
+
+footer {
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    background-color: #121212;
+    color: #FAFAFA;
+    height: 4rem;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
 }
