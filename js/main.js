@@ -41,7 +41,7 @@ function displayPosts(posts) {
             button.classList.add("clicked");
 
             setTimeout(function () {
-                window.location.href = `post.html?id=${postId}`;
+                window.location.href = `/user/post.html?id=${postId}`;
             }, 1000);
         });
     });
@@ -103,7 +103,7 @@ async function renderCarousel() {
             button.classList.add("clicked");
 
             setTimeout(function () {
-                window.location.href = `post.html?id=${postId}`;
+                window.location.href = `/user/post.html?id=${postId}`;
             }, 1000);
         });
     });
